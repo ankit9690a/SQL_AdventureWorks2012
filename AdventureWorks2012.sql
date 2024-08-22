@@ -1,6 +1,5 @@
 USE AdventureWorks2012
 
-
 ----A) Get all the details from the person table including email ID, phone number and phone number type
 SELECT * FROM [Person].[EmailAddress]
 SELECT * FROM [Person].[PersonPhone]
@@ -14,7 +13,7 @@ SELECT * FROM [Sales].[SalesOrderHeader]
 --above tables are used to get the data
 
 SELECT * FROM [Sales].[SalesOrderHeader]
-WHERE( MONTH(OrderDate)=5 AND YEAR(OrderDate)=2011 )
+WHERE (MONTH(OrderDate)=5 AND YEAR(OrderDate)=2011)
 
 ----C) Get the details of the sales details order made in the month of May 2011
 SELECT * FROM [Sales].[SalesOrderDetail]
@@ -44,7 +43,7 @@ SELECT YEAR(OrderDate) 'year',MONTH(OrderDate)'months', FLOOR(SUM(LineTotal)) 't
 JOIN [Sales].[SalesOrderHeader] SOH ON SSO.SalesOrderID=SOH.SalesOrderID
 GROUP BY MONTH(OrderDate),YEAR(OrderDate)
 HAVING YEAR(OrderDate)=2011
-ORDER BY SUM(LineTotal) ASC
+ORDER BY SUM(LineTotal)
 
 ----F) Get the total sales made to the customer with FirstName='Gustavo' and LastName ='Achong'
 SELECT * FROM [Sales].[SalesOrderDetail]
